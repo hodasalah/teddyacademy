@@ -1,0 +1,50 @@
+.contact__box {
+    @include transition(all 0.2s);
+    padding: 50px 25px;
+    color: $color-light-gray;
+
+    & .icon__box {
+        height: 80px;
+        margin-bottom: 2rem;
+        text-align: center;
+        i {
+            display: block;
+            font-size: 3.5rem;
+        }
+    }
+    .content-text {
+        h3 {
+            letter-spacing: 3.1px;
+        }
+        p {
+            &,
+            & > a {
+                font-size: 1.3rem;
+                color: $color-white;
+            }
+        }
+    }
+    &__f1 {
+        background-color: lighten($colorBlue, 4);
+        i {
+            color: #94edfc;
+            border-color: #94edfc;
+        }
+    }
+    &__f2 {
+        background-color: lighten($colorYellow, 4);
+
+        i {
+            color: #fffa9e;
+            border-color: #fffa9e;
+        }
+    }
+    &__f3 {
+        background-color: lighten($colorRed, 6);
+
+        i {
+            color: #fdc1a1;
+            border-color: #fdc1a1;
+        }
+    }
+}

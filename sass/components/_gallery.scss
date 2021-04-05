@@ -1,0 +1,40 @@
+.gallery__item__wrapper {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    overflow: hidden;
+    &__photo {
+        width: 100%;
+        max-height: 100%;
+        display: block;
+        height: 20rem;
+        max-width: 100%;
+    }
+    &__content {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-transform: uppercase;
+        color: $color-white;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        background-color: rgba($colorRed, 0.5);
+        z-index: 2;
+        @include transition(all 0.4s cubic-bezier(0.43, 0, 0.77, 0.73));
+        .hover__content {
+            @include hover__content;
+            & > * {
+                @include textInCenter;
+            }
+        }
+    }
+    &:hover &__content {
+        visibility: visible;
+    }
+    &:hover .hover__content {
+        @include transform(translate(0%, 0%) scale(1));
+        opacity: 1;
+    }
+}

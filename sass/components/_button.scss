@@ -1,0 +1,77 @@
+.btn {
+    &:link,
+    &:visited {
+        position: relative;
+        padding: 15px 40px;
+        display: inline-block;
+        font-weight: 800;
+        overflow: hidden;
+        @include radius(100px);
+        @include transition(all 0.2s ease-out);
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        @include radius(100%);
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+        background-color: rgba($color-white, 0.2);
+        @include transition(all 1s ease-in-out);
+    }
+
+    &:active {
+        @include transform(translateY(-1px));
+        box-shadow: 0 5px 10px rgba($color-black, 0.4);
+    }
+    &:hover {
+        @include transform(translateY(-3px));
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+        &:hover::after {
+            animation-name: btnAnimate;
+            animation-duration: 0.4s;
+        }
+    }
+}
+.btn-red {
+    background-color: $colorRed;
+    color: $color-white;
+}
+.btn-white {
+    background-color: $color-white;
+
+    &-1 {
+        color: $colorBlue;
+        &::after {
+            background-color: rgba($colorBlue, 0.4);
+        }
+    }
+    &-2 {
+        color: $colorYellow;
+        &::after {
+            background-color: rgba($colorYellow, 0.4);
+        }
+    }
+    &-3 {
+        color: $colorRed;
+        &::after {
+            background-color: rgba($colorRed, 0.4);
+        }
+    }
+}
+.btn-transparent,
+.btn-transparent:link,
+.btn-transparent:visited {
+    font-weight: 700;
+    color: $colorRed;
+    box-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid $colorRed;
+    @include radius(0);
+    &:hover {
+        @include radius(100px);
+        background-color: $colorRed;
+        color: $color-white;
+    }
+}

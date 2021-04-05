@@ -1,0 +1,180 @@
+.footer {
+    background-color: $heading-titles-color;
+    color: $footer-color;
+    .newsletter {
+        padding: 8rem 1rem 2rem;
+        border-bottom: 1px solid $color-dark-gray;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-items: space-between;
+        align-items: center;
+        gap: 2rem;
+        & > * {
+            max-width: 500px;
+        }
+
+        .form {
+            height: 3.5rem;
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+
+            input {
+                background-color: $color-light-gray;
+                height: 100%;
+                width: 65%;
+                padding: 1rem;
+                border: 0;
+                color: $color-dark-gray;
+                font-size: 0.8rem;
+                font-weight: 400;
+                line-height: 1;
+                &:focus {
+                    outline: none;
+                }
+            }
+            [type="email"] {
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 40px;
+            }
+
+            [type="submit"] {
+                position: absolute;
+                top: 0;
+                cursor: pointer;
+                right: 5px;
+                width: 34%;
+                background-color: lighten($colorBlue, 3);
+                color: $color-white;
+                align-self: flex-end;
+                border-radius: 0;
+                border-top-right-radius: 40px;
+                border-bottom-right-radius: 40px;
+            }
+        }
+    }
+    /* main content */
+    .foot-content {
+        padding: 4rem 1rem;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        h4,
+        h5 {
+            position: relative;
+            color: $colorBlue;
+            display: inline-block;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+        h5::after,
+        h4::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            display: inline-block;
+            height: 3px;
+            top: 100%;
+            left: 0;
+            transform: scaleX(0.2);
+            transition: all 0.5s ease-in-out;
+            background-image: linear-gradient(
+                to right,
+                $colorBlue,
+                $colorRed,
+                $colorYellow
+            );
+        }
+
+        .col-4 {
+            p {
+                margin: 14px 0 0 0;
+            }
+            h5 {
+                margin: 1rem 0;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    margin-right: 5px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: $colorBlue;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 0 0 4px 4px rgba(#000, 0.1);
+                    transition: all 0.5s ease-in-out;
+                    a {
+                        display: block;
+                        color: $color-white;
+                        i {
+                            padding-right: 0;
+                        }
+                    }
+                    &:hover {
+                        transform: translateY(-5px);
+                        background: linear-gradient(
+                            to right bottom,
+                            $colorBlue,
+                            $colorRed,
+                            $colorYellow
+                        );
+                    }
+                }
+            }
+        }
+    }
+    p,
+    li a {
+        color: #a3a3a3;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+    ul {
+        margin: 14px 0;
+    }
+    a {
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        i {
+            padding-right: 5px;
+            transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+            color: #08c;
+
+            i {
+                padding-right: 10px;
+            }
+        }
+    }
+    /* copy right */
+    .footCopy {
+        background-color: $color-black;
+        padding: 0.8rem 1rem;
+        text-align: center;
+        a {
+            color: transparent;
+            display: inline-block;
+            background: linear-gradient(
+                to right bottom,
+                $colorRed,
+                $colorYellow
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            &:hover {
+                transform: rotate(4deg) scale(1.01);
+            }
+        }
+    }
+}

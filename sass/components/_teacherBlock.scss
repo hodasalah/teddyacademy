@@ -1,0 +1,60 @@
+.teachers__cards {
+    position: absolute;
+    width: 100%;
+    bottom: -10rem;
+    z-index: 1000;
+    @media screen and(max-width:854px) {
+        bottom: -34rem;
+    }
+    @media screen and(max-width:413px) {
+        bottom: -80rem;
+    }
+    .teacher__card {
+        height: 22rem;
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        &-1 {
+            background-image: url(../../images/team1-293x315.jpg);
+        }
+        &-2 {
+            background-image: url(../../images/team2-293x315.jpg);
+        }
+        &-3 {
+            background-image: url(../../images/team3-293x315.jpg);
+        }
+        &-4 {
+            background-image: url(../../images/team4-293x315.jpg);
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: rgba($color-black, 0.4);
+            @include transition(all 0.5s ease-in-out);
+        }
+        &:hover .overlay {
+            height: 100%;
+        }
+        .hover__content {
+            @include hover__content;
+            padding: 0;
+            background-color: rgba($color-black, 0.35);
+        }
+        .hover__content > * {
+            @include textInCenter;
+            color: $color-white;
+        }
+
+        &:hover .hover__content {
+            @include transform(translate(0%, 0%) scale(1));
+            opacity: 1;
+        }
+    }
+}

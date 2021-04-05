@@ -1,0 +1,114 @@
+/*------------------------------------------------------------------------------------------*/
+/* 6. Preloader */
+/*------------------------------------------------------------------------------------------*/
+.preloader {
+    position: fixed;
+    z-index: 8000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: lighten($color-light-gray, 5);
+
+    .content {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 60px;
+        -webkit-filter: url("#gooey");
+        filter: url("#gooey");
+
+        .item {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            background: -webkit-linear-gradient(
+                45deg,
+                $colorYellow 0%,
+                lighten($colorRed, 15) 100%
+            );
+            background: -o-linear-gradient(
+                45deg,
+                $colorYellow 0%,
+                lighten($colorRed, 15) 100%
+            );
+            background: linear-gradient(
+                45deg,
+                $colorBlue 0%,
+                lighten($colorRed, 15) 100%
+            );
+            border-radius: 50%;
+            -webkit-animation: loading 4s infinite;
+            animation: loading 4s infinite;
+            -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+            -webkit-transform-origin: center left;
+            transform-origin: center left;
+
+            &:nth-of-type(2) {
+                -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+            }
+
+            &:nth-of-type(3) {
+                -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+            }
+
+            &:nth-of-type(4) {
+                -webkit-animation-delay: 1.2s;
+                animation-delay: 1.2s;
+            }
+
+            &:nth-of-type(5) {
+                -webkit-animation-delay: 1.6s;
+                animation-delay: 1.6s;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+
+    45% {
+        left: 120px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    90% {
+        left: 294px;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+}
+
+@keyframes loading {
+    0% {
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+
+    45% {
+        left: 120px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    90% {
+        left: 294px;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+    }
+}

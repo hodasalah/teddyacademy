@@ -1,0 +1,46 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin radius($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
+}
+@mixin transition($props) {
+    transition: $props;
+    -webkit-transition: $props;
+    -moz-transition: $props;
+    -ms-transition: $props;
+    -o-transition: $props;
+}
+@mixin transform($props) {
+    transform: $props;
+    -webkit-transform: $props;
+    -moz-transform: $props;
+    -ms-transform: $props;
+    -o-transform: $props;
+}
+@mixin backfaceVisibility($prop) {
+    backface-visibility: $prop;
+    -webkit-backface-visibility: $prop;
+}
+@mixin hover__content {
+    height: 100%;
+    background-color: rgba($colorRed, 0.75);
+    @include transition(all 0.65s cubic-bezier(0.43, 0, 0.77, 0.73));
+    @include transform(translate(0%, 0%) scale(1.1));
+    opacity: 0;
+}
+@mixin textInCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    @include transform(translate(-50%, -50%));
+}

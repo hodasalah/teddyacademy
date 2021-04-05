@@ -1,0 +1,109 @@
+.section-content {
+    padding: 1rem;
+    p {
+        max-width: 700px;
+    }
+}
+.section-about {
+    background-color: $color-light-gray;
+    padding: 15rem 1rem;
+    margin-top: -16vh;
+    .subtitle-paragraph {
+        margin: 0;
+        margin-bottom: 4rem;
+    }
+
+    .row {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(calc(400px - 2rem), 1fr)
+        );
+        gap: 2rem;
+        @media screen and (max-width: 400px) {
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        }
+    }
+}
+.section-features {
+    background-image: linear-gradient(
+            to bottom,
+            rgba($color-black, 0.8),
+            rgba($color-black, 0.8)
+        ),
+        url(../images/features.jpg);
+    background-size: cover;
+    background-position: top;
+    padding: 10rem 0;
+    @include transform(skewY(-7deg));
+    margin-top: -8rem;
+    & > * {
+        @include transform(skewY(7deg));
+    }
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+}
+.section-gallery {
+    padding: 10rem 0 15rem;
+    background-color: $color-light-gray;
+    @include transform(skewY(-7deg));
+    & > * {
+        @include transform(skewY(7deg));
+    }
+    .row {
+        padding: 0;
+        max-width: 100vw;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        &:not(:last-child) {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.section-team {
+    padding: 8rem 0;
+    background-color: $colorBlue;
+    @include transform(skewY(-7deg));
+    & > * {
+        @include transform(skewY(7deg));
+    }
+    p {
+        max-width: 700px;
+        margin: auto;
+        padding: 0 1rem;
+    }
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        &:not(:last-child) {
+            margin-bottom: 0 !important;
+        }
+    }
+    position: relative;
+}
+.section-schoolLife {
+    padding: 10rem 0;
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-bottom: 6rem;
+    }
+    & .card-details {
+        margin: 0;
+    }
+}
+.testimonials {
+    @include transform(skewY(-7deg));
+    background-color: $color-light-gray;
+    padding: 4rem 0 10rem 0;
+    & > * {
+        @include transform(skewY(7deg));
+    }
+}
+.contact {
+    padding: 10rem 0 0 0;
+
+    .row {
+        padding: 0;
+        max-width: 100vw;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}

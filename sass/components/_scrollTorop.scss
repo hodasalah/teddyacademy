@@ -1,0 +1,17 @@
+.scroll-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 3px;
+    background-color: $colorBlue;
+    font-size: 1.5rem;
+    color: $color-white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+    &:hover {
+        background-color: darken($colorBlue, 10);
+        transform: translateY(-1px);
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "children",
+  "version": "1.0.0",
+  "description": "sass project",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/all.min.css css/magnific-popup.css  css/owl.carousel.min.css css/owl.theme.default.min.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
+    "compress:sass": "node-sass css/style.prefix.css css/style.css --output-style compressed"
+  },
+  "author": "hoda salah",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.0",
+    "postcss-cli": "^7.1.2"
+  },
+  "dependencies": {}
+}
